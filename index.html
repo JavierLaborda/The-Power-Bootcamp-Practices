@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titulo -->
+    <title>Pinterest Practice</title>
+    <!-- Icono -->
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/dh1milewi/image/upload/v1722154248/Pinterest%20Practice/Pinterest_en6pei.png"
+      type="icon/png"
+    />
+    <!-- Description -->
+    <meta
+      name="description"
+      content="This is a wip website for The Power Master"
+    />
+    <!-- CSS: Style previo -->
+    <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        opacity: 80%;
+        color: white;
+        text-align: right;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header: Parte superior con barra navegacion -->
+    <header>
+      <!-- nav: con enlaces de navegacion -->
+      <nav>
+        <!-- ul: lista desordenada de elementos -->
+        <ul>
+          <!-- li: logo pinterest -->
+          <li>
+            <!-- Enlace a misma pagina -->
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dh1milewi/image/upload/v1722154248/Pinterest%20Practice/Pinterest2_bvv5do.png"
+                alt="Pinterest Logo"
+                width="50"
+              />
+            </a>
+          </li>
+          <!-- li: inicio -->
+          <li>
+            <a href="#">
+              <span
+                style="color: white; background-color: black; font-size: 20px"
+              >
+                Inicio
+              </span>
+            </a>
+          </li>
+          <!-- li: Explorar -->
+          <li>
+            <a href="#">
+              <span
+                style="color: black; background-color: white; font-size: 20px"
+              >
+                Explorar
+              </span>
+            </a>
+          </li>
+          <!-- li: Crear -->
+          <li>
+            <a href="#">
+              <span
+                style="color: black; background-color: white; font-size: 20px"
+              >
+                Crear
+              </span>
+            </a>
+          </li>
+          <!-- li: Input Barra navegacion -->
+          <li>
+            <input
+              type="text"
+              placeholder="Buscar"
+              style="width: 200px; padding: 10px; font-size: 20px"
+            />
+          </li>
+          <!-- li: Campana -->
+          <li>
+            <!-- Enlace a misma pagina -->
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dh1milewi/image/upload/v1722155921/Pinterest%20Practice/Campana_q3gxuw.png"
+                alt="Bell Logo"
+                width="50"
+              />
+            </a>
+          </li>
+          <!-- li: Mensajes -->
+          <li>
+            <!-- Enlace a misma pagina -->
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dh1milewi/image/upload/v1722155921/Pinterest%20Practice/Mensajes_aepbdb.png"
+                alt="Message Logo"
+                width="50"
+              />
+            </a>
+          </li>
+          <!-- li: Logo persona -->
+          <li>
+            <!-- Enlace a misma pagina -->
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dh1milewi/image/upload/v1722155921/Pinterest%20Practice/Usuario_aw900f.png"
+                alt="User Logo"
+                width="50"
+              />
+            </a>
+          </li>
+          <!-- li: flecha -->
+          <li>
+            <!-- details: para hacer desplegable -->
+            <details>
+              <summary>
+                <img
+                  src="https://res.cloudinary.com/dh1milewi/image/upload/v1722156417/Pinterest%20Practice/Flecha_dxfbwx.png"
+                  alt="Arrow Logo"
+                  width="50"
+                />
+              </summary>
+              <div class="dropdown-content">
+                <a href="#">Actualmente en</a>
+                <a href="#">Tus cuentas</a>
+                <a href="#">Más opciones</a>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- main: Para resto de pagina -->
+    <main>
+      <ul>
+        <!-- recuadro con imagen1 -->
+        <li>
+          <!-- a: Porque el recuadro te lleva a enlace -->
+          <a href="#">
+            <img
+              src="https://res.cloudinary.com/dh1milewi/image/upload/v1722154248/Pinterest%20Practice/Imagen3_leaxol.jpg"
+              alt="Image1"
+              width="300"
+            />
+          </a>
+          <!-- Tambien un div para los botones desplegados -->
+          <div>
+            <a href="#">Guardar</a>
+            <a href="#">Icono 1</a>
+            <a href="#">Icono 2</a>
+          </div>
+        </li>
+        <!-- recuadro con imagen2 -->
+        <li>
+          <!-- a: Porque el recuadro te lleva a enlace -->
+          <a href="#">
+            <img
+              src="https://res.cloudinary.com/dh1milewi/image/upload/v1722154248/Pinterest%20Practice/Imagen1_tp1kz5.jpg"
+              alt="Image2"
+              width="300"
+            />
+          </a>
+          <!-- Tambien un div para los botones desplegados -->
+          <div>
+            <a href="#">Guardar</a>
+            <a href="#">Icono 1</a>
+            <a href="#">Icono 2</a>
+          </div>
+        </li>
+        <!-- recuadro con imagen3 -->
+        <li>
+          <!-- a: Porque el recuadro te lleva a enlace -->
+          <a href="#">
+            <img
+              src="https://res.cloudinary.com/dh1milewi/image/upload/v1722154247/Pinterest%20Practice/Imagen2_guojly.jpg"
+              alt="Image2"
+              width="300"
+            />
+          </a>
+          <!-- Tambien un div para los botones desplegados -->
+          <div>
+            <a href="#">Guardar</a>
+            <a href="#">Icono 1</a>
+            <a href="#">Icono 2</a>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <!-- footer: Pie de pagina con boton -->
+    <footer class="footer">
+      <!-- nav: con enlaces de navegacion -->
+      <nav>
+        <!-- ul: lista desordenada de elementos -->
+        <ul>
+          <!-- li: logo interrogante -->
+          <li>
+            <!-- Enlace a misma pagina -->
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dh1milewi/image/upload/v1722157775/Pinterest%20Practice/Question_qnec6y.png"
+                alt="Question Logo"
+                width="50"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
