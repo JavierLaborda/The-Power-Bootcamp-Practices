@@ -1,0 +1,65 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #9ad79b;
+}
+
+/* La etiqueta header debe estar fija durante la navegación en la parte superior, y mediante un color de fondo hacer que los elementos durante el scroll pasen "por detrás". */
+header {
+  width: 100%;
+  padding: 1%;
+  margin: 0;
+  border: 2px dotted #9ad79b;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* La etiqueta sidebar debe de estar colocada a la derecha del contenido justo debajo de header. */
+.sidebar {
+  width: 14%;
+  border: 2px dotted #9ad79b;
+  margin: 2% 0 2% 0;
+  padding: 2%;
+  position: relative;
+  left: 85%;
+}
+
+/* El resto de elementos deberán de respetar su colocación tal y como se refleja en la imagen de ejemplo. */
+.content {
+  border: 2px dotted #9ad79b;
+  margin: 1% 0 1% 0;
+  padding: 1.5%;
+  position: relative;
+}
+
+.features {
+  border: 2px dotted #9ad79b;
+  margin: 1% 0 1% 0;
+  padding: 1.5%;
+  text-align: center; /* Centra horizontalmente */
+  position: relative;
+}
+
+/* La etiqueta footer debe de estar "pegada" al fondo de la aplicación. */
+footer {
+  width: 100%;
+  border: 2px dotted #9ad79b;
+  padding: 1% 0;
+  margin-bottom: 1%;
+  text-align: center; /* Centra horizontalmente */
+  position: fixed;
+  bottom: 0;
+}
