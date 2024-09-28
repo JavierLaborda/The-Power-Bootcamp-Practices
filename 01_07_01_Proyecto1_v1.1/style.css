@@ -1,0 +1,904 @@
+/*! IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+/*! FUENTES */
+@font-face {
+  font-family: 'Nuckle';
+  src: url('assets/fonts/Nuckle-Regular.woff2') format('woff2'),
+    url('assets/fonts/Nuckle-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*! VARS */
+:root {
+  /* Fonts */
+  --rtc-font-primary: 'ABeeZee', sans-serif;
+  --rtc-font-secondary: 'EB Garamond', sans-serif;
+  --rtc-font-terciary: 'Nuckle', sans-serif;
+
+  /* Backgrounds */
+  --rtc-background-color-001: #ffffff;
+  --rtc-background-color-002: #c5c5c5;
+  --rtc-background-color-003: #b20000;
+  --rtc-background-color-004: #0010a1;
+  --rtc-background-color-005: #000000;
+  --rtc-background-color-006: #d9d9d9;
+  --rtc-background-color-007: #f0f0f0;
+  --rtc-background-color-008: #e2c324;
+  --rtc-background-color-009: #4a4a4a;
+
+  /* Text Colors */
+  --rtc-font-color-001: #ffffff;
+  --rtc-font-color-002: #000000;
+  --rtc-font-color-003: #141615;
+
+  /* Font Sizes */
+  --rtc-font-size-001: 12px;
+  --rtc-font-size-002: 14px;
+  --rtc-font-size-003: 16px;
+  --rtc-font-size-004: 20px;
+  --rtc-font-size-005: 24px;
+  --rtc-font-size-006: 30px;
+  --rtc-font-size-007: 40px;
+  --rtc-font-size-008: 50px;
+  --rtc-font-size-009: 70px;
+  --rtc-font-size-010: 96px;
+
+  /* Spacings */
+  --rtc-margin-xs: 10px;
+  --rtc-margin-s: 20px;
+  --rtc-margin-m: 30px;
+  --rtc-margin-l: 40px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-xxl: 60px;
+
+  --rtc-padding-xs: 10px;
+  --rtc-padding-s: 20px;
+  --rtc-padding-m: 30px;
+  --rtc-padding-l: 40px;
+  --rtc-padding-xl: 50px;
+  --rtc-padding-xxl: 80px;
+  --rtc-padding-xxxl: 200px;
+
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+  --rtc-gap-xxl: 60px;
+  --rtc-gap-xxxl: 180px;
+
+  /* Borders */
+  --rtc-radius-001: 2%;
+  --rtc-radius-002: 30px;
+  --rtc-radius-003: 100%;
+}
+
+/*! RESET STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--rc-font-primary);
+}
+
+/*! GENERAL STYLES */
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: var(--rtc-font-primary);
+  font-weight: 400;
+}
+a {
+  cursor: pointer;
+  color: var(--rtc-font-color-003);
+}
+.menu {
+  display: none;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--rtc-font-size-001);
+  color: var(--rtc-font-color-003);
+  background-color: var(--rtc-background-color-001);
+  overflow: hidden;
+}
+.common-padding {
+  padding: var(--rtc-padding-xs) var(--rtc-padding-m);
+}
+.image-container {
+  padding: 0;
+  overflow: hidden;
+}
+.background-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.car-item {
+  width: 45vw;
+  height: 610px;
+  padding: var(--rtc-padding-l);
+  background-color: var(--rtc-background-color-006);
+  border: none;
+  border-radius: var(--rtc-radius-001);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.car-select-img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+.button_selector {
+  justify-content: space-between;
+  background-color: transparent;
+}
+.color-selection {
+  width: 15vw;
+  justify-content: flex-end;
+  background-color: transparent;
+  gap: var(--rtc-gap-l);
+}
+.button-info {
+  padding: var(--rtc-padding-xs) var(--rtc-padding-s);
+  color: var(--rtc-font-color-002);
+  background-color: var(--rtc-background-color-001);
+  border: none;
+  text-decoration: none;
+  border-radius: var(--rtc-radius-002);
+  font-size: var(--rtc-font-size-001);
+  width: 100px;
+  height: 45px;
+  cursor: pointer;
+  font-weight: 400;
+}
+.button-info:hover {
+  background-color: var(--rtc-background-color-005);
+  color: var(--rtc-font-color-001);
+}
+.button-select {
+  border: 2px solid var(--rtc-background-color-001);
+  border-radius: var(--rtc-radius-003);
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/*? HEADER STYLES */
+/*?______________ */
+#principal_header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+#nav-primary {
+  width: 75vw;
+  justify-content: start;
+  align-items: center;
+}
+#nav-secundary {
+  width: 15vw;
+  justify-content: space-between;
+  background-color: black;
+  padding: 0;
+}
+#page-links {
+  justify-content: space-between;
+  gap: var(--rtc-gap-s);
+}
+#icon-links {
+  width: 100%;
+}
+#principal_header > a > img {
+  width: 100%;
+  height: auto;
+}
+.side-icon {
+  width: 20%;
+  height: auto;
+}
+.column_list {
+  display: flex;
+  padding-top: var(--rtc-padding-s);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+/*? MAIN STYLES */
+/*?_____________ */
+/*? hero styles */
+#hero {
+  padding-top: var(--rtc-padding-l);
+}
+#title {
+  position: absolute;
+  left: var(--rtc-padding-xs);
+  top: 100px;
+}
+#title > h1 {
+  font-family: var(--rtc-font-secondary);
+  font-weight: 1;
+  font-size: var(--rtc-font-size-009);
+  color: var(--rtc-font-color-001);
+}
+#title > p {
+  font-family: var(--rtc-font-primary);
+  font-weight: 1;
+  font-size: var(--rtc-font-size-003);
+  color: var(--rtc-font-color-001);
+}
+
+/*? car-selection styles */
+#car_selection > ul {
+  display: flex;
+  padding: var(--rtc-padding-s);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--rtc-gap-m);
+}
+.car-item > h5 {
+  font-size: var(--rtc-font-size-006);
+  font-weight: 400;
+  padding-bottom: var(--rtc-margin-xs);
+}
+.car-item > p {
+  font-size: var(--rtc-font-size-003);
+  font-weight: 400;
+}
+.b_grey {
+  background-color: var(--rtc-background-color-007);
+}
+.b_red {
+  background-color: var(--rtc-background-color-003);
+}
+.b_blue {
+  background-color: var(--rtc-background-color-004);
+}
+.b_black {
+  background-color: var(--rtc-background-color-005);
+}
+.b_yellow {
+  background-color: var(--rtc-background-color-008);
+}
+/*? stores styles */
+#stores {
+  position: relative;
+}
+#stores > h2 {
+  width: 62vw;
+  padding: var(--rtc-gap-xs) var(--rtc-gap-l);
+  font-family: var(--rtc-font-secondary);
+  font-size: var(--rtc-font-size-010);
+  line-height: 110px;
+}
+#stores > p {
+  width: 35vw;
+  padding: var(--rtc-gap-s) var(--rtc-gap-l) var(--rtc-gap-m) var(--rtc-gap-l);
+  font-size: var(--rtc-font-size-005);
+}
+#promo-banner {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 290px;
+  width: 470px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 25%;
+  left: var(--rtc-padding-xl);
+  border: none;
+  border-radius: var(--rtc-radius-002);
+}
+#promo-banner > h3 {
+  color: var(--rtc-font-color-001);
+  font-size: var(--rtc-font-size-008);
+}
+#promo-banner > a {
+  font-size: var(--rtc-font-size-001);
+  text-align: center;
+  width: 230px;
+}
+/*? accesories styles */
+#accesories {
+  height: 65vh;
+  width: auto;
+  padding-right: 0;
+}
+#cards_list {
+  padding-right: var(--rtc-padding-m);
+  padding-bottom: var(--rtc-padding-s);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: var(--rtc-gap-m);
+}
+#cards_list::-webkit-scrollbar {
+  height: 8px;
+}
+#cards_list::-webkit-scrollbar-thumb {
+  background-color: var(--rtc-background-color-002);
+  border-radius: var(--rtc-radius-002);
+}
+#cards_list::-webkit-scrollbar-track {
+  background-color: var(--rtc-background-color-007);
+  border-radius: var(--rtc-radius-002);
+}
+.card {
+  width: 35vw;
+  height: 55vh;
+  align-items: center;
+  padding: var(--rtc-padding-m);
+  gap: var(--rtc-gap-s);
+}
+.card > h4 {
+  width: 100%;
+  text-align: start;
+  font-size: var(--rtc-font-size-006);
+}
+.card > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--rtc-radius-001);
+}
+.card > a {
+  align-self: flex-start;
+}
+/*? car-promo styles */
+#car-promo {
+  position: relative;
+}
+#promo {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 24%;
+  width: 40%;
+  position: absolute;
+  bottom: 10%;
+  left: var(--rtc-padding-xl);
+  border: none;
+  background-color: transparent;
+}
+#promo > h3 {
+  color: var(--rtc-font-color-001);
+  font-size: var(--rtc-font-size-008);
+}
+#promo > p {
+  font-size: var(--rtc-font-size-002);
+  color: var(--rtc-font-color-001);
+  width: 70%;
+}
+/*? maybach styles */
+#maybach {
+  padding-top: var(--rtc-padding-m);
+  justify-content: space-between;
+}
+#wheel_programme_desktop {
+  width: 50vw;
+  height: 20vw;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+#wheel_programme_desktop > h3 {
+  font-size: var(--rtc-font-size-008);
+}
+#wheel_programme_desktop > p {
+  font-size: var(--rtc-font-size-002);
+}
+#wheel_programme_desktop > a {
+  width: 120px;
+  background-color: var(--rtc-background-color-007);
+  font-size: var(--rtc-font-size-002);
+}
+#wheel_programme_desktop > a:hover {
+  background-color: var(--rtc-background-color-005);
+}
+#wheel_programme_mobile {
+  display: none;
+}
+/*? maybach-contact styles */
+#maybach_contact {
+  background-color: var(--rtc-background-color-009);
+  padding: var(--rtc-padding-s) var(--rtc-padding-xxxl);
+  justify-content: space-between;
+}
+#maybach_contact > p {
+  width: 50vw;
+  color: var(--rtc-font-color-001);
+  font-size: var(--rtc-font-size-003);
+  font-weight: 100;
+}
+#maybach_contact > a {
+  width: 200px;
+  border: 2px solid var(--rtc-background-color-005);
+}
+
+/*? FOOTER STYLES */
+/*?_____________ */
+/*? sign_up styles */
+#principal_footer {
+  height: 80vh;
+  padding: var(--rtc-gap-xl);
+  background-color: var(--rtc-background-color-005);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#sign_up {
+  height: 35vh;
+  background-color: var(--rtc-background-color-005);
+  color: var(--rtc-font-color-001);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#sign_up > h4 {
+  font-size: var(--rtc-font-size-004);
+  text-align: center;
+}
+#sign_up > p {
+  font-size: var(--rtc-font-size-002);
+  text-align: center;
+  font-family: var(--rtc-font-terciary);
+  font-weight: 100;
+}
+#input_email {
+  padding: 0;
+  width: 45vw;
+  background-color: var(--rtc-background-color-005);
+  border: var(--rtc-background-color-001) 1px solid;
+  border-radius: var(--rtc-radius-002);
+  width: 28vw;
+  height: 45px;
+  justify-content: space-between;
+}
+#address {
+  padding: var(--rtc-padding-l);
+  font-weight: 400;
+  background-color: var(--rtc-background-color-005);
+  border: none;
+}
+#address::placeholder {
+  color: var(--rtc-font-color-001);
+  font-family: var(--rtc-font-terciary);
+  font-weight: 400;
+  font-size: var(--rtc-font-size-001);
+  text-align: center;
+  opacity: 0.7;
+  width: 15vw;
+}
+#input_email > a {
+  text-align: center;
+  font-size: var(--rtc-font-size-001);
+  font-weight: 400;
+  font-family: var(--rtc-font-terciary);
+}
+#input_policy {
+  padding: 0;
+  justify-content: space-evenly;
+  width: 25vw;
+  background-color: var(--rtc-background-color-005);
+}
+#input_policy > p {
+  text-align: center;
+  color: var(--rtc-font-color-001);
+  font-weight: 400;
+  font-family: var(--rtc-font-terciary);
+}
+.underlined {
+  text-decoration: underline;
+  color: var(--rtc-font-color-001);
+  font-weight: 400;
+  font-family: var(--rtc-font-terciary);
+  font-size: var(--rtc-font-size-001);
+}
+#agree {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--rtc-background-color-001);
+  border-radius: var(--rtc-radius-001);
+  background-color: var(--rtc-background-color-005);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#agree:checked {
+  background-color: var(--rtc-background-color-001);
+}
+#agree::after {
+  content: '\2716';
+  color: var(--rtc-font-color-002);
+  font-size: var(--rtc-font-size-002);
+  text-align: center;
+}
+#sign_up > nav > ul {
+  background-color: var(--rtc-background-color-005);
+  padding: 0;
+  width: 10vw;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*? navigation styles */
+#navigation {
+  width: 100%;
+  justify-content: space-between;
+  align-items: start;
+  background-color: var(--rtc-background-color-005);
+}
+#navigation > nav > * {
+  font-family: var(--rtc-font-terciary);
+  color: var(--rtc-font-color-001);
+}
+#navigation > nav > h4 {
+  font-size: var(--rtc-font-size-004);
+}
+#navigation > nav > ul > li > a {
+  font-size: var(--rtc-font-size-002);
+  color: var(--rtc-font-color-001);
+  opacity: 0.7;
+  font-weight: 100;
+  font-family: var(--rtc-font-terciary);
+}
+
+/*? MEDIA QUERIES STYLES */
+@media (max-width: 1040px) {
+  /* general */
+  .background-img {
+    position: relative;
+    width: 120%;
+    height: auto;
+  }
+  /* main - hero */
+  #title {
+    padding: 0;
+    left: var(--rtc-padding-l);
+    height: 8vh;
+  }
+  #title > h1 {
+    font-size: var(--rtc-font-size-008);
+  }
+  .car-item {
+    width: 43vw;
+    height: 400px;
+    padding: var(--rtc-padding-s);
+  }
+  .button_selector {
+    width: 100%;
+    justify-content: space-between;
+    background-color: transparent;
+  }
+  .color-selection {
+    width: 15vw;
+    gap: var(--rtc-gap-s);
+  }
+  /* main - stores */
+  #stores > h2 {
+    padding: var(--rtc-padding-xs) var(--rtc-padding-l);
+    font-size: var(--rtc-font-size-008);
+    line-height: 60px;
+    text-align: start;
+  }
+  #stores > p {
+    width: 60%;
+    text-align: start;
+    padding: var(--rtc-gap-xs) var(--rtc-gap-l);
+    margin-bottom: var(--rtc-margin-m);
+  }
+  /*? accesories styles */
+  #accesories {
+    height: 80vh;
+    width: auto;
+    padding-right: 0;
+  }
+  /*? car-promo styles */
+  #promo {
+    width: 50%;
+  }
+  /*? maybach styles */
+  #maybach {
+    padding-top: var(--rtc-padding-s);
+  }
+  #wheel_picture_desktop {
+    width: 50%;
+    height: auto;
+  }
+  #wheel_programme_desktop {
+    width: 40vw;
+    height: 50vh;
+  }
+  #wheel_programme_desktop > h3 {
+    font-size: var(--rtc-font-size-007);
+  }
+  #wheel_programme_desktop > a {
+    width: 120px;
+    font-size: var(--rtc-font-size-001);
+  }
+  /* maybach-contact styles */
+  #maybach_contact {
+    padding: var(--rtc-padding-s) var(--rtc-padding-xxl);
+    justify-content: space-around;
+  }
+  /* footer - sign up*/
+  #principal_footer {
+    padding: var(--rtc-gap-m);
+    height: 85vh;
+  }
+  #input_email {
+    width: 50vw;
+  }
+  #address {
+    padding: var(--rtc-padding-xs);
+    width: 80%;
+  }
+  #input_policy {
+    align-items: center;
+    width: 40vw;
+  }
+  #sign_up > nav > ul {
+    width: 20vw;
+  }
+  #address::placeholder {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  /* general */
+  .background-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  /* header */
+  #nav-primary {
+    display: none;
+  }
+  #nav-secundary {
+    padding: 0;
+    width: 40vw;
+  }
+  #icon-links > li > a {
+    display: flex;
+    justify-content: end;
+  }
+  .side-icon {
+    width: 40%;
+    height: auto;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+    width: 40%;
+    height: auto;
+  }
+  /* main - hero */
+  #title {
+    padding: 0;
+    left: var(--rtc-padding-s);
+    top: 145px;
+    height: 8vh;
+  }
+  #title > h1 {
+    font-size: var(--rtc-font-size-005);
+  }
+  #background_picture1 {
+    transform: scale(1.3);
+  }
+  #background_picture2 {
+    transform: scale(1.3);
+  }
+  /* main - car_selection */
+  #car_selection {
+    padding: var(--rtc-padding-xs) var(--rtc-padding-xs);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .car-item {
+    width: 90vw;
+    height: 380px;
+    align-items: center;
+    gap: 10px;
+  }
+  .button_selector {
+    justify-content: center;
+  }
+  .color-selection {
+    display: none;
+  }
+  /* main - stores */
+  #stores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--rtc-padding-xs) var(--rtc-padding-xs);
+  }
+  #stores > h2 {
+    padding: 0;
+    width: 100%;
+    font-size: var(--rtc-font-size-008);
+    line-height: 60px;
+    text-align: center;
+  }
+  #stores > p {
+    width: 100%;
+    text-align: center;
+    padding: var(--rtc-gap-s) var(--rtc-gap-m) var(--rtc-gap-m) var(--rtc-gap-m);
+    margin-bottom: var(--rtc-margin-m);
+  }
+  #promo-banner {
+    width: 90%;
+    height: 45%;
+    bottom: 0%;
+    left: 5%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #promo-banner > h3 {
+    color: var(--rtc-font-color-001);
+    font-size: var(--rtc-font-size-007);
+    text-align: center;
+    width: 100%;
+  }
+  #promo-banner > a {
+    font-size: var(--rtc-font-size-001);
+    text-align: center;
+    width: 230px;
+  }
+  /* accesories styles */
+  #accesories {
+    margin-top: var(--rtc-margin-m);
+    height: 50vh;
+    width: auto;
+    padding-right: 0;
+    padding-left: var(--rtc-padding-m);
+  }
+  /* main - car-promo */
+  #car-promo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #promo {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: var(--rtc-padding-s) var(--rtc-padding-s);
+    width: 100%;
+    background-color: var(--rtc-background-color-007);
+  }
+  #promo > h3 {
+    color: var(--rtc-font-color-003);
+    font-size: var(--rtc-font-size-004);
+    text-align: center;
+    width: 100%;
+    padding-bottom: var(--rtc-padding-xs);
+  }
+  #promo > p {
+    align-self: center;
+    font-size: var(--rtc-font-size-002);
+    color: var(--rtc-font-color-003);
+    text-align: center;
+    width: 80%;
+    padding-bottom: var(--rtc-padding-xs);
+  }
+  /* main - maybach */
+  #wheel_programme_desktop {
+    display: none;
+  }
+  #wheel_picture_desktop {
+    display: none;
+  }
+  #wheel_programme_mobile {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--rtc-padding-xs) 0 var(--rtc-padding-xs) 0;
+  }
+  #wheel_programme_mobile > h3 {
+    font-family: var(--rtc-font-secondary);
+    font-size: var(--rtc-font-size-006);
+    width: 100%;
+    text-align: center;
+  }
+  #wheel_programme_mobile > p {
+    text-align: center;
+  }
+  #wheel_programme_mobile > a {
+    width: 120px;
+    background-color: var(--rtc-background-color-007);
+    font-size: var(--rtc-font-size-002);
+  }
+  #wheel_programme_mobile > a:hover {
+    background-color: var(--rtc-background-color-005);
+  }
+  #wheel_picture {
+    clip-path: inset(30px 0 0 0);
+    width: 100vw;
+  }
+  /* main maybach-contact */
+  #maybach_contact {
+    padding: var(--rtc-padding-m) var(--rtc-padding-m);
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--rtc-gap-s);
+  }
+  #maybach_contact > p {
+    width: 80vw;
+    text-align: center;
+  }
+  /* footer - sign up*/
+  #principal_footer {
+    padding: var(--rtc-gap-m);
+    height: 115vh;
+  }
+  #sign_up > p {
+    font-size: var(--rtc-font-size-001);
+  }
+  #input_email {
+    width: 85vw;
+  }
+  #address {
+    padding: var(--rtc-padding-xs);
+    width: 70%;
+  }
+  #address::placeholder {
+    width: 90%;
+  }
+  #input_policy {
+    align-items: center;
+    width: 70vw;
+    gap: var(--rtc-gap-xs);
+  }
+  #input_policy > p {
+    text-align: start;
+  }
+  #agree {
+    width: 20px;
+    height: 20px;
+  }
+  #sign_up > nav > ul {
+    width: 40vw;
+  }
+  /* footer - navigation */
+  #navigation {
+    height: 70vh;
+    width: 40vw;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  #navigation > nav > * {
+    text-align: center;
+  }
+}
