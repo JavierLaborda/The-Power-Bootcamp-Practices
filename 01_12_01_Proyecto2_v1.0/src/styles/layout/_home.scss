@@ -179,6 +179,34 @@ header {
       @include flex-center(column, space-between, center, nowrap, $rtc-gap-xs);
     }
   }
+  @include responsive(xs) {
+    .barra-filtros {
+      .accionador {
+        img {
+          width: 4vh;
+          height: 4vh;
+          top: 2vh;
+        }
+        &.active {
+          top: 36.7vh;
+        }
+      }
+    }
+
+    .menu-filtros {
+      height: 17vh;
+
+      @include flex-center(column, space-between, center, nowrap, 0);
+
+      &.hidden {
+        display: none;
+      }
+    }
+    .filtros-contenedor {
+      width: 100%;
+      @include flex-center(column, space-between, center, nowrap, $rtc-gap-xs);
+    }
+  }
 }
 
 main {

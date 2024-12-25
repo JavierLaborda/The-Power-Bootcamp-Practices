@@ -93,7 +93,6 @@
     .texto-tarjeta {
       h3 {
         font-size: $rtc-font-size-000;
-        background-color: red;
       }
 
       .texto-interior {
@@ -117,6 +116,22 @@
 
         .texto-interior {
           font-size: $rtc-font-size-001;
+        }
+      }
+    }
+    @include responsive(xs) {
+      margin-top: $rtc-margin-xxs;
+      flex: 1 1 calc(50% - $rtc-gap-s); // 2 tarjetas por fila
+      max-width: calc(50% - $rtc-gap-m);
+
+      .texto-tarjeta {
+        padding: $rtc-padding-xs $rtc-padding-xxs;
+        h3 {
+          font-size: $rtc-font-size-0000;
+        }
+
+        .texto-interior {
+          font-size: $rtc-font-size-000;
         }
       }
     }

@@ -2,6 +2,7 @@
 //* Fonts
 $rtc-font-primary: 'Inter', sans-serif;
 //* Sizes
+$rtc-font-size-0000: 8px;
 $rtc-font-size-000: 10px;
 $rtc-font-size-001: 13px;
 $rtc-font-size-002: 16px;
@@ -66,6 +67,7 @@ $rtc-radius-002: 10px;
 $rtc-radius-003: 100%;
 
 //! BREAKPOINTS
+$rtc-breakpoint-xs: 428px;
 $rtc-breakpoint-s: 717px;
 $rtc-breakpoint-m: 941px;
 $rtc-breakpoint-l: 1078px;

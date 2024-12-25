@@ -76,7 +76,11 @@
 }
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == s {
+  @if $breakpoint == xs {
+    @media (max-width: #{$rtc-breakpoint-xs}) {
+      @content;
+    }
+  } @else if $breakpoint == s {
     @media (max-width: #{$rtc-breakpoint-s}) {
       @content;
     }

@@ -24,4 +24,8 @@
     height: 2.5vh;
     width: 40%;
   }
+  @include responsive(xs) {
+    width: 40%;
+    height: 2.6vh;
+  }
 }
