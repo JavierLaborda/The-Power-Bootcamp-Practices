@@ -1,0 +1,13 @@
+.links {
+  @include flex-center(column, start, start, nowrap, 0);
+
+  li:first-child > p {
+    font-weight: $rtc-font-weight-003;
+    margin-bottom: $rtc-margin-xs;
+  }
+
+  li > p {
+    margin-bottom: $rtc-margin-xs;
+    font-weight: $rtc-font-weight-001;
+  }
+}

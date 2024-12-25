@@ -1,0 +1,237 @@
+//! ESTILOS BODY
+header {
+  color: $rtc-font-color-001;
+
+  .encabezado-principal {
+    padding: $rtc-padding-xs $rtc-padding-s;
+    background-color: $rtc-background-color-004;
+    @include flex-center(row, space-between, center, nowrap, 0);
+
+    .icono-menu {
+      display: none;
+    }
+    .nav-opciones {
+      @include flex-center(row, space-between, center, nowrap, $rtc-gap-m);
+      li {
+        width: auto; // Deja que el ancho sea dinámico
+        margin-right: 0; // Asegúrate de que no haya margen extra
+        // Se introduce efecto hover
+        @include hover-underline($rtc-font-color-004, $rtc-font-color-005);
+        cursor: pointer;
+      }
+    }
+    .nav-iconos {
+      width: 100%;
+      @include flex-center(row, space-between, center, nowrap, $rtc-gap-m);
+      li {
+        cursor: pointer;
+        transition: filter 0.3s ease; // Transición suave
+        &:hover {
+          filter: brightness(0) saturate(100%) invert(83%) sepia(85%)
+            saturate(608%) hue-rotate(16deg) brightness(1.1);
+          // Aproximación a $rtc-button-color-002 (#fff852)
+        }
+
+        &:active {
+          filter: brightness(0) saturate(100%) invert(65%) sepia(93%)
+            saturate(400%) hue-rotate(1deg) brightness(1.1);
+          // Aproximación a $rtc-button-color-003 (#ffd700)
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 300px;
+  }
+
+  .barra-filtros {
+    background-color: $rtc-background-color-002;
+    width: 100%;
+    height: 3vh;
+    @include flex-center(row, center, center, nowrap, 0);
+
+    .accionador {
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+
+      img {
+        border-radius: $rtc-radius-003;
+        transition: transform 0.3s ease, top 0.3s ease;
+        width: 7vh;
+        height: 7vh;
+        position: relative;
+        top: 1.7vh;
+        background-color: $rtc-background-color-002;
+        display: block;
+      }
+
+      &.active {
+        top: 60vh;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .menu-filtros {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    z-index: 1000;
+    background-color: $rtc-background-color-002;
+    z-index: 999;
+    @include flex-center(row, center, center, nowrap, 0);
+
+    &.hidden {
+      display: none;
+    }
+  }
+  .filtros-contenedor {
+    width: 45%;
+    @include flex-center(row, space-between, center, nowrap, $rtc-gap-s);
+  }
+
+  // Breakpoints responsive
+  @include responsive(l) {
+  }
+
+  @include responsive(m) {
+    .barra-filtros {
+      .accionador {
+        img {
+          width: 4vh;
+          height: 4vh;
+          top: 2vh;
+        }
+        &.active {
+          top: 37vh;
+        }
+      }
+    }
+
+    .menu-filtros {
+      height: 15vh;
+
+      @include flex-center(column, space-between, center, nowrap, 0);
+
+      &.hidden {
+        display: none;
+      }
+    }
+    .filtros-contenedor {
+      width: 100%;
+      @include flex-center(column, space-between, center, nowrap, $rtc-gap-xs);
+    }
+  }
+
+  @include responsive(s) {
+    .encabezado-principal {
+      img {
+        width: 60%;
+      }
+      .icono-menu {
+        position: relative;
+        bottom: 2px;
+        display: block;
+        width: 7%;
+        height: auto;
+        object-fit: contain;
+      }
+      .nav-opciones {
+        display: none;
+      }
+      .nav-iconos {
+        @include flex-center(row, end, center, nowrap, $rtc-gap-xs);
+        li {
+          margin-right: 0; // Elimina márgenes adicionales
+          width: auto; // Ajusta el ancho dinámicamente
+        }
+      }
+    }
+    .barra-filtros {
+      .accionador {
+        img {
+          width: 4vh;
+          height: 4vh;
+          top: 2vh;
+        }
+        &.active {
+          top: 31.5vh;
+        }
+      }
+    }
+
+    .menu-filtros {
+      height: 15vh;
+
+      @include flex-center(column, space-between, center, nowrap, 0);
+
+      &.hidden {
+        display: none;
+      }
+    }
+    .filtros-contenedor {
+      width: 100%;
+      @include flex-center(column, space-between, center, nowrap, $rtc-gap-xs);
+    }
+  }
+}
+
+main {
+  flex: 1 0 auto; // Asegura que ocupe solo el espacio necesario
+  padding: $rtc-padding-xxl 0 $rtc-padding-xxl $rtc-padding-m; // Se pone 0 a la derecha para cuadrar distancias
+  background-color: $rtc-background-color-001;
+  // Mixins
+  @include flex-center(row, start, center, wrap, $rtc-gap-m);
+
+  // Breakpoints responsive
+  @include responsive(l) {
+  }
+
+  @include responsive(m) {
+    padding: $rtc-padding-m 0 $rtc-padding-l $rtc-padding-m;
+    @include flex-center(row, start, center, wrap, $rtc-gap-m);
+  }
+  @include responsive(s) {
+    padding: $rtc-padding-m 0 $rtc-padding-l $rtc-padding-m;
+    @include flex-center(row, start, center, wrap, $rtc-gap-s);
+  }
+}
+
+footer {
+  position: relative;
+  padding: $rtc-padding-xl $rtc-padding-xxl;
+  background-color: $rtc-background-color-005;
+  color: $rtc-font-color-001;
+  @include flex-center(row, space-between, start, nowrap, 0);
+
+  // Breakpoints responsive
+  @include responsive(l) {
+  }
+
+  @include responsive(m) {
+    padding: $rtc-padding-l $rtc-padding-l;
+    @include flex-center(column, center, center, nowrap, $rtc-gap-m);
+
+    li {
+      text-align: center;
+      margin: 0 auto; // Asegúrate de que el contenedor se centre
+      font-size: $rtc-font-size-001;
+    }
+  }
+
+  @include responsive(s) {
+    padding: $rtc-padding-l $rtc-padding-l;
+    @include flex-center(column, center, center, nowrap, $rtc-gap-m);
+
+    li {
+      text-align: center;
+      margin: 0 auto; // Asegúrate de que el contenedor se centre
+      font-size: $rtc-font-size-001;
+    }
+  }
+}

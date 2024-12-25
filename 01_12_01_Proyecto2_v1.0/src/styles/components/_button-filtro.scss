@@ -1,0 +1,34 @@
+.btn-filtro {
+  background-color: $rtc-button-color-001;
+  color: $rtc-font-color-003;
+  padding: 2px $rtc-padding-xs;
+  font-size: $rtc-font-size-001;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 20%;
+  height: 3vh;
+  // Mixins de flex - border y shadow
+  @include flex-center(row, center, center, nowrap, 0);
+  @include border($rtc-radius-001, $rtc-background-color-005, 1px);
+  @include shadow(0px, 4px, 8px, 0px, rgba(0, 0, 0, 0.25));
+
+  &:hover {
+    background-color: $rtc-button-color-002;
+  }
+  &:active {
+    background-color: $rtc-button-color-003;
+  }
+
+  // Breakpoints responsive
+  @include responsive(l) {
+  }
+
+  @include responsive(m) {
+    width: 20%;
+    height: 2.5vh;
+  }
+  @include responsive(s) {
+    width: 20%;
+    height: 2.5vh;
+  }
+}

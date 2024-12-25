@@ -1,0 +1,46 @@
+//! GLOBAL
+// Fonts
+@import './global/fonts';
+// Variables
+@import './global/variables';
+// Extends
+@import './global/extends';
+// Mixins
+@import './global/mixins';
+
+//! COMPONENTS
+@import './components/button';
+@import './components/tarjeta';
+@import './components/links';
+@import './components/button-filtro';
+@import './components/input-filtro';
+
+//! LAYOUT
+@import './layout/home';
+
+//! ESTILOS GENERALES --- COMPLETAR
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: $rtc-font-primary;
+  background-color: $rtc-background-color-001;
+  color: $rtc-font-color-003;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+}
+html {
+  height: 100%;
+}

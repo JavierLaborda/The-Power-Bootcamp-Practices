@@ -1,0 +1,124 @@
+.tarjeta {
+  border: none;
+  margin-top: $rtc-margin-s; // Espaciado vertical entre tarjetas
+  background-color: $rtc-background-color-001;
+  overflow: hidden; // Contenido no se desborda
+
+  // Mixins
+  @include flex-center(column, center, center, nowrap, 0);
+  @include shadow(0px, 0px, 5px, 5px, rgba(0, 0, 0, 0.25));
+  @include border($rtc-radius-001, $rtc-background-color-002, 1px);
+  @include hover-transition(0px 10px 20px rgba(0, 0, 0, 0.4), 1.03);
+
+  // Ajusta el tamaño de las tarjetas para que sean uniformes
+  /* flex: [flex-grow] [flex-shrink] [flex-basis]; */
+  flex: 1 1 calc(25% - $rtc-gap-m); // Ajusta para 4 tarjetas por fila
+  max-width: calc(25% - $rtc-gap-m); // Tamaño máximo coherente con flex
+
+  .fondo-tarjeta {
+    background-color: $rtc-background-color-002;
+    width: 100%;
+    height: 300px;
+    @include flex-center(row, center, center, nowrap, 0);
+
+    img {
+      width: 90%; // Evita que las imágenes se ajuste bien
+      height: auto;
+      object-fit: contain; // Escalar imagen manteniendo proporcion
+    }
+  }
+  .texto-tarjeta {
+    width: 100%;
+    padding: $rtc-padding-xs $rtc-padding-s;
+    text-align: left;
+
+    h3 {
+      font-size: $rtc-font-size-002;
+      font-weight: $rtc-font-weight-002;
+      margin-bottom: 2px; // Espaciado bajo titulo
+    }
+
+    .texto-interior {
+      @include flex-center(row, space-between, center, nowrap, 0);
+      font-size: $rtc-font-size-003;
+      font-weight: $rtc-font-weight-002;
+      color: $rtc-font-color-003;
+      margin: $rtc-margin-xs 0; // Reduce el espacio entre el modelo y el botón
+      p {
+        margin: 0;
+      }
+    }
+
+    .button {
+      margin: $rtc-margin-xs 0;
+      width: 100%;
+    }
+  }
+
+  // Breakpoints responsive
+  @include responsive(xl) {
+    flex: 1 1 calc(25% - $rtc-gap-m); // 4 tarjetas por fila
+    max-width: calc(25% - $rtc-gap-m);
+    .texto-tarjeta {
+      h3 {
+        font-size: $rtc-font-size-001;
+      }
+
+      .texto-interior {
+        @include flex-center(row, space-between, center, nowrap, 0);
+        font-size: $rtc-font-size-002;
+      }
+    }
+  }
+  @include responsive(l) {
+    .fondo-tarjeta {
+      height: 250px;
+    }
+    flex: 1 1 calc(25% - $rtc-gap-m); // 4 tarjetas por fila
+    max-width: calc(25% - $rtc-gap-m);
+    .texto-tarjeta {
+      h3 {
+        font-size: $rtc-font-size-001;
+      }
+
+      .texto-interior {
+        @include flex-center(row, space-between, center, nowrap, 0);
+        font-size: $rtc-font-size-001;
+      }
+    }
+  }
+  @include responsive(m) {
+    flex: 1 1 calc(33.33% - $rtc-gap-m); // 3 tarjetas por fila
+    max-width: calc(33.33% - $rtc-gap-m);
+    .texto-tarjeta {
+      h3 {
+        font-size: $rtc-font-size-000;
+        background-color: red;
+      }
+
+      .texto-interior {
+        @include flex-center(row, space-between, center, nowrap, 0);
+        font-size: $rtc-font-size-001;
+      }
+    }
+    @include responsive(s) {
+      margin-top: $rtc-margin-xxs;
+      flex: 1 1 calc(50% - $rtc-gap-s); // 2 tarjetas por fila
+      max-width: calc(50% - $rtc-gap-m);
+      .fondo-tarjeta {
+        height: 150px;
+      }
+      .texto-tarjeta {
+        padding: $rtc-padding-xs $rtc-padding-xxs;
+        h3 {
+          font-size: $rtc-font-size-000;
+          color: $rtc-font-color-002;
+        }
+
+        .texto-interior {
+          font-size: $rtc-font-size-001;
+        }
+      }
+    }
+  }
+}

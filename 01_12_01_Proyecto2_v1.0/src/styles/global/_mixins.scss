@@ -1,0 +1,98 @@
+@mixin flex-center(
+  $direction: row,
+  $justifyContent: center,
+  $alignItems: center,
+  $wrap: nowrap,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin border($br, $color, $size) {
+  border: $size solid $color;
+  border-radius: $br;
+}
+
+@mixin shadow(
+  $xOffset: 0px,
+  $yOffset: 4px,
+  $blur: 6px,
+  $spreadRadius: 0px,
+  $color: rgba(0, 0, 0, 0.2)
+) {
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: $xOffset $yOffset $blur $spreadRadius $color;
+}
+
+@mixin hover-underline(
+  $underlineColor: $rtc-font-color-004,
+  $activeColor: $rtc-font-color-005
+) {
+  position: relative; // Necesario para que el pseudo-elemento se posicione respecto al elemento principal
+  color: inherit; // Mantiene el color inicial del texto
+  text-decoration: none; // Elimina cualquier subrayado por defecto
+
+  &::after {
+    content: ''; // Crea un pseudo-elemento vacío
+    position: absolute;
+    left: 0;
+    bottom: 0; // Justo debajo del texto
+    width: 100%; // Ocupa todo el ancho del elemento
+    height: 1px; // Grosor fijo de la línea
+    background-color: $underlineColor; // Color de la línea
+    transform: scaleX(0); // Oculta inicialmente la línea
+    transform-origin: left; // Inicia desde la izquierda
+    transition: transform 0.3s ease, background-color 0.3s ease; // Animaciones suaves
+  }
+  &:hover::after {
+    transform: scaleX(1); // Hace visible la línea
+  }
+  &:hover {
+    color: $underlineColor; // Cambia el color del texto al hacer hover
+  }
+  &:active {
+    color: $activeColor; // Cambia el color del texto al hacer clic
+  }
+  &:active::after {
+    background-color: $activeColor; // Cambia el color de la línea al hacer clic
+  }
+}
+
+@mixin hover-transition(
+  $shadow-hover: 0px 10px 15px rgba(0, 0, 0, 0.3),
+  $scale: 1.05
+) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale($scale); // Aumenta ligeramente el tamaño
+    box-shadow: $shadow-hover; // Sombra más pronunciada
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == s {
+    @media (max-width: #{$rtc-breakpoint-s}) {
+      @content;
+    }
+  } @else if $breakpoint == m {
+    @media (max-width: #{$rtc-breakpoint-m}) {
+      @content;
+    }
+  } @else if $breakpoint == l {
+    @media (max-width: #{$rtc-breakpoint-l}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$rtc-breakpoint-xl}) {
+      @content;
+    }
+  } @else {
+    @error "El breakpoint '#{$breakpoint}' no está definido.";
+  }
+}

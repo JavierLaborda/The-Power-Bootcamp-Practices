@@ -1,0 +1,72 @@
+//! FONTS
+//* Fonts
+$rtc-font-primary: 'Inter', sans-serif;
+//* Sizes
+$rtc-font-size-000: 10px;
+$rtc-font-size-001: 13px;
+$rtc-font-size-002: 16px;
+$rtc-font-size-003: 20px;
+$rtc-font-size-004: 24px;
+//* Weigths
+$rtc-font-weight-001: 300;
+$rtc-font-weight-002: 400;
+$rtc-font-weight-003: 700;
+
+//! COLORS
+//* Backgrounds
+$rtc-background-color-001: #ffffff;
+$rtc-background-color-002: #f1f1f1;
+$rtc-background-color-003: #efefef;
+$rtc-background-color-004: #2c2c2c;
+$rtc-background-color-005: #000000;
+//* Shadows
+$rtc-shadow-color-001: #000000;
+//* Text Colors
+$rtc-font-color-001: #ffffff;
+$rtc-font-color-002: #2c2c2c;
+$rtc-font-color-003: #000000;
+$rtc-font-color-004: #fff852;
+$rtc-font-color-005: #ffc107;
+//* Buttons
+$rtc-button-color-001: #f6f6f6;
+$rtc-button-color-002: #fff852;
+$rtc-button-color-003: #ffd700;
+$rtc-button-color-004: #ffc107;
+
+//! SPACINGS
+$rtc-margin-xxs: 5px;
+$rtc-margin-xs: 10px;
+$rtc-margin-s: 20px;
+$rtc-margin-m: 30px;
+$rtc-margin-l: 40px;
+$rtc-margin-xl: 50px;
+$rtc-margin-xxl: 60px;
+
+$rtc-padding-xxs: 5px;
+$rtc-padding-xs: 10px;
+$rtc-padding-s: 20px;
+$rtc-padding-m: 30px;
+$rtc-padding-l: 40px;
+$rtc-padding-xl: 50px;
+$rtc-padding-xxl: 80px;
+$rtc-padding-xxxl: 120px;
+
+$rtc-gap-xxs: 5px;
+$rtc-gap-xs: 10px;
+$rtc-gap-s: 20px;
+$rtc-gap-m: 30px;
+$rtc-gap-l: 40px;
+$rtc-gap-xl: 50px;
+$rtc-gap-xxl: 60px;
+$rtc-gap-xxxl: 180px;
+
+//! BORDER
+$rtc-radius-001: 5px;
+$rtc-radius-002: 10px;
+$rtc-radius-003: 100%;
+
+//! BREAKPOINTS
+$rtc-breakpoint-s: 717px;
+$rtc-breakpoint-m: 941px;
+$rtc-breakpoint-l: 1078px;
+$rtc-breakpoint-xl: 1250px;
